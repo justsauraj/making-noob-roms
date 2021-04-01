@@ -1,15 +1,15 @@
 env: # Environt variable to pass to all tasks
     CIRRUS_CLONE_DEPTH: 1 # No need to clone with whole history
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone repo
-   
+
 
 task:
-    name: building-Ghey-Roms
-    timeout_in: 118m
+    name: Buildbomt
+    timeout_in: 122m
     container:
-      image: apon77/aosp:latest
-      cpu: 8
-      memory: 10G
+      image: mrkhan007/aosp:latest
+      cpu: 16
+      memory: 30G
     sync_script:
       - bash sync
     build_script:
@@ -17,5 +17,5 @@ task:
     upload_ccache_script:
       - bash upload_ccache
 
-#starting build 
+#start build 
 
